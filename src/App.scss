@@ -1,0 +1,13 @@
+.products-list{
+    display: flex;
+    // background-color: red;
+    flex-wrap: wrap;
+}
+
+.most-seleing{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
