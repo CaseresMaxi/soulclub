@@ -1,0 +1,67 @@
+.floating-cart-container{
+    background-color: rgba(0, 0, 0, 0.438);
+    height: 50px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    position: fixed;
+    bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+.floating-cart-container:hover{
+    background-color: rgba(0, 0, 0, 0.952)
+}
+
+.floating-cart-img{
+    width: 45px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.name-container{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.talle-btn{
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    margin-right: 5px;
+    background-color: rgba(0, 0, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.talle-btn-selected{
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    margin-right: 5px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price-container{
+    margin-left: 20px;
+}
+
+.whatsapp-logo{
+    width: 35px;
+    margin-left: 15px;
+}
+
+.whatsapp-button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
