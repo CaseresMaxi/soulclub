@@ -3,7 +3,9 @@ import "./Product.scss"
 import AddToCart from "../../assets/addToCart.png"
 
 export const Product: React.FC<any> = (props): any => {
+    console.log(props.product,"props")
     return <div className="product-card">
+       
         <img className="product-img" src={props.product.src}></img>
         <div> {props.product.name}</div>
         <div> {props.product.price}</div>
