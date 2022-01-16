@@ -19,6 +19,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// export const firestore = app.firestore();
+// const firestore = app.firestore();
 const analytics = getAnalytics(app);
-export default getFirestore();
+ export default getFirestore();
