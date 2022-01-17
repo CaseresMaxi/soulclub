@@ -18,6 +18,8 @@ export const App: React.FC<any> = (): any => {
         </Route>
         <Route path="/add" component={AddProduct} exact>
         </Route>
+        <Route path="/add/:id" component={AddProduct} exact>
+        </Route>
       </Switch>
     </Router>
   )
