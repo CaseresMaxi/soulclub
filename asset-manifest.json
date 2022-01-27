@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/souldclub/static/css/main.89fd00ea.css",
-    "main.js": "/souldclub/static/js/main.7613e593.js",
+    "main.css": "/souldclub/static/css/main.831b8261.css",
+    "main.js": "/souldclub/static/js/main.892d62db.js",
     "static/js/787.000bac07.chunk.js": "/souldclub/static/js/787.000bac07.chunk.js",
     "static/media/filter.png": "/souldclub/static/media/filter.4d2b28d622640da91c34.png",
     "static/media/whatsapp-logo.png": "/souldclub/static/media/whatsapp-logo.288c668ccb8033e17ce1.png",
     "static/media/whatsapp-logo-grey.png": "/souldclub/static/media/whatsapp-logo-grey.0a69bcdbac9e2250083c.png",
     "index.html": "/souldclub/index.html",
-    "main.89fd00ea.css.map": "/souldclub/static/css/main.89fd00ea.css.map",
-    "main.7613e593.js.map": "/souldclub/static/js/main.7613e593.js.map",
+    "main.831b8261.css.map": "/souldclub/static/css/main.831b8261.css.map",
+    "main.892d62db.js.map": "/souldclub/static/js/main.892d62db.js.map",
     "787.000bac07.chunk.js.map": "/souldclub/static/js/787.000bac07.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89fd00ea.css",
-    "static/js/main.7613e593.js"
+    "static/css/main.831b8261.css",
+    "static/js/main.892d62db.js"
   ]
 }
