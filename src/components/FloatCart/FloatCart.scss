@@ -23,8 +23,13 @@
 }
 
 .name-container{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-right: auto;
+    margin-left: 10%;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -.01em;
+    font-size: 20px;
+    padding-right: 10%;
 }
 
 .talle-btn{
@@ -52,9 +57,6 @@
     justify-content: center;
 }
 
-.price-container{
-    margin-left: 20px;
-}
 
 .whatsapp-logo{
     width: 35px;

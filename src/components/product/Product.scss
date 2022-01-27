@@ -3,6 +3,8 @@
     //max-width: 400px;
     //border: 1px solid rgb(110, 110, 110);
     display: flex;
+    padding-right: 10px;
+    padding-left: 10px;
     align-items: center;
     flex-direction: column;
     
@@ -18,6 +20,13 @@ p{
     margin-top: 5px;
 }
 
+.product-name{
+    color: rgb(0, 0, 0);
+    font-family: "Poppins",sans-serif;
+    margin-bottom: 0;
+
+
+}
 
 .cuotas{
     margin-left: 20px;
@@ -38,4 +47,41 @@ p{
 }
 .add-to-cart-img{
     height: 30px;
+}
+
+.price-container{
+    margin-right: auto;
+    margin-left: 10%;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -.01em;
+    font-size: 20px;
+    display: flex;
+}
+
+.prebius-price{
+    margin-right: 5px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -.01em;
+    font-size: 15px;
+    text-decoration:line-through;
+    color: #a7a7a7;
+    padding-top: 5px;
+}
+
+.sub-texto{
+    font-size: 15px; 
+    margin-bottom: -5px;
+    color: #a7a7a7;
+}
+
+.off{
+    background-color:#9aed71 ;
+    padding-left: 7px;
+    padding-right: 7px;
+    position: relative;
+    font-weight: 500;
+    top: 35px;
+    left: -32%;
 }
