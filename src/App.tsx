@@ -14,7 +14,7 @@ export const App: React.FC<any> = (): any => {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Home}>
+        <Route path="/" component={Home} exact>
         </Route>
         <Route path="/add" component={AddProduct}>
         </Route>
