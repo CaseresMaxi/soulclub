@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.831b8261.css",
-    "main.js": "/static/js/main.a51157ca.js",
-    "static/js/787.000bac07.chunk.js": "/static/js/787.000bac07.chunk.js",
-    "static/media/filter.png": "/static/media/filter.4d2b28d622640da91c34.png",
-    "static/media/whatsapp-logo.png": "/static/media/whatsapp-logo.288c668ccb8033e17ce1.png",
-    "static/media/whatsapp-logo-grey.png": "/static/media/whatsapp-logo-grey.0a69bcdbac9e2250083c.png",
-    "index.html": "/index.html",
-    "main.831b8261.css.map": "/static/css/main.831b8261.css.map",
-    "main.a51157ca.js.map": "/static/js/main.a51157ca.js.map",
-    "787.000bac07.chunk.js.map": "/static/js/787.000bac07.chunk.js.map"
+    "main.css": "/souldclub/static/css/main.831b8261.css",
+    "main.js": "/souldclub/static/js/main.30e95b7c.js",
+    "static/js/787.000bac07.chunk.js": "/souldclub/static/js/787.000bac07.chunk.js",
+    "static/media/filter.png": "/souldclub/static/media/filter.4d2b28d622640da91c34.png",
+    "static/media/whatsapp-logo.png": "/souldclub/static/media/whatsapp-logo.288c668ccb8033e17ce1.png",
+    "static/media/whatsapp-logo-grey.png": "/souldclub/static/media/whatsapp-logo-grey.0a69bcdbac9e2250083c.png",
+    "index.html": "/souldclub/index.html",
+    "main.831b8261.css.map": "/souldclub/static/css/main.831b8261.css.map",
+    "main.30e95b7c.js.map": "/souldclub/static/js/main.30e95b7c.js.map",
+    "787.000bac07.chunk.js.map": "/souldclub/static/js/787.000bac07.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.831b8261.css",
-    "static/js/main.a51157ca.js"
+    "static/js/main.30e95b7c.js"
   ]
 }
