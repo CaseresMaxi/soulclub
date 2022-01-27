@@ -2,7 +2,7 @@
   "name": "sould-club-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://caseresmaxi.github.io/",
+  "homepage": "https://caseresmaxi.github.io/souldclub/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
