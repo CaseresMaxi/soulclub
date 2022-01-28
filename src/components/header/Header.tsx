@@ -6,6 +6,7 @@ import Filer from "../../assets/filter.png"
 
 export const Header: React.FC<any> = (): any => {
     const [fitlersOpen, setFitlersOpen] = useState(false)
+ 
     return <div>
         <div className="header-container">
             <div className="logo">SOULD CLUB
@@ -16,7 +17,7 @@ export const Header: React.FC<any> = (): any => {
         </div>
         {fitlersOpen &&
             <div className="filters">
-               FILTERS WORKING PROGRES
+               
                 {/* <div className="dropdown">
                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown

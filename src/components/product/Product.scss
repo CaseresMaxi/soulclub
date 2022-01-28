@@ -1,5 +1,5 @@
 .product-card{
-    width: 50%;
+    width: 33%;
     //max-width: 400px;
     //border: 1px solid rgb(110, 110, 110);
     display: flex;
@@ -9,7 +9,11 @@
     flex-direction: column;
     
 }
-
+@media (max-width: 600px) {
+    .product-card {
+        width: 50%;
+    }
+  }
 p{
     margin-top: 0;
     margin-bottom: 0;
