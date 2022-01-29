@@ -8,6 +8,7 @@
     align-items: center;
     flex-direction: column;
     
+    
 }
 @media (max-width: 600px) {
     .product-card {
@@ -41,27 +42,21 @@ p{
 
 .add-to-cart{
     position: relative;
-    top: -90%;
-    left: -35%;
-    border-radius: 700px;
+    // border-radius: 50%;
     border: none;
-    background-color: rgb(255, 133, 133);
-    height: 40px;
-    width: 40px;
+    background-color: rgba(0, 0, 0, 0.514);
+    height: 30px;
+    color:white;
+    width: 100%;
+    // top:20%;
+    margin-bottom: 5px;
+    
 }
 .add-to-cart-img{
     height: 30px;
+    
 }
 
-.price-container{
-    margin-right: auto;
-    margin-left: 10%;
-    font-weight: 600;
-    line-height: 1.35;
-    letter-spacing: -.01em;
-    font-size: 20px;
-    display: flex;
-}
 
 .prebius-price{
     margin-right: 5px;

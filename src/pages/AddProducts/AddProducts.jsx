@@ -6,7 +6,6 @@ import 'firebase/firestore';
 
 
 import { collection, doc, setDoc, Firestore, onSnapshot, snapshotEqual, deleteDoc, addDoc, getDoc } from 'firebase/firestore';
-
 export const AddProduct = () => {
     const [imgB64, setImgB64] = useState("")
     const toBase64 = (files) => {
@@ -21,11 +20,13 @@ export const AddProduct = () => {
 
     }
 
-    const { id } = useParams()
+    const {id}  = useParams()
+    console.log(id,"asd");
     const [initialValues, setInitialValues] = useState({})
     const [type, setType] = useState("");
 
     useEffect(async () => {
+        console.log("useEfect")
         if (id) {
             console.log(id);
             const docSnap = await getDoc(doc(db, "productos", id));
@@ -54,6 +55,7 @@ export const AddProduct = () => {
                         {
                             ...values,
                             src: imgB64 ? imgB64 : initialValues.src,
+                            type,
                             talles: Array.isArray(values.talles) ? initialValues.talles : values.talles.split(",")
                         });
                     window.location.reload();
@@ -84,7 +86,7 @@ export const AddProduct = () => {
                         name="desc"
                         component="input"
                         type="text"
-                        placeholder="descuento"
+                        placeholder="promocion"
                     />
                     <Field
                         name="stock"

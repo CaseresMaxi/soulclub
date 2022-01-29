@@ -8,13 +8,17 @@ import 'firebase/firestore';
 import db from "../../firebase"
 // import { collection, doc, setDoc , Firestore, onSnapshot, snapshotEqual, deleteDoc } from 'firebase/firestore';
 import { collection, onSnapshot, } from 'firebase/firestore';
+import arrow from "../../assets/Arrow-down.svg"
 import "./Home.scss"
+import { Filter } from "../../components/Filtter/Filter";
+import { useParams } from "react-router-dom";
 
 
 export const Home = () => {
   const imgs = ["https://www.somosmamas.com.ar/wp-content/uploads/2017/05/como-combinar-ropa-de-mujer-2.jpg", "https://www.somosmamas.com.ar/wp-content/uploads/2017/05/como-combinar-ropa-de-mujer-2.jpg", "https://www.somosmamas.com.ar/wp-content/uploads/2017/05/como-combinar-ropa-de-mujer-2.jpg"]
 
   const [productsApi, setProductsApi] = useState([{ id: "", data: {} }])
+  const [minMaxPrice, setMinMaxPrice] = useState({ min: "", max: "" });
   // const [baners, setBaners] = useState({});
   // const ej  = async () =>{ await addDoc(collection(db,"productos"),{})}
   // const ej  = async () =>{ await setDoc(doc(db,"productos"),{})}
@@ -25,45 +29,34 @@ export const Home = () => {
   }, [])
   const [type, setType] = useState("all");
   const [cart, setCart] = useState(null)
+  const {pass} = useParams()
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(() => {
+    
+      setIsAdmin(pass==="camilasantander")
+    
+  }, []);
+  
   return (
     <div className='app'>
       <Header />
       {/* <div ><Carouser   imgs={imgs} /></div> */}
       {/* <div className="most-seleing">Mas vendidos</div> */}
-      <div className="filter-container">
-        <div className="selec-container">
-        <select className="select-type" name="select" onChange={(e) => setType(e.target.value)}>
-          <option value="all">seleccionar un tipo</option>
-          <option value="Pantalon">Pantalon</option>
-          <option value="Vestido">Vestido</option>
-          <option value="Accesorio">Accesorio</option>
-        </select>
-        </div>
-        <div className="talles-container">
-          <input className="talle-check" type="checkbox" name="s"></input>
-          <label  htmlFor="s">s</label>
-          <input className="talle-check" type="checkbox" name="s"></input>
-          <label htmlFor="m">m</label>
-          <input className="talle-check" type="checkbox" name="s"></input>
-          <label className="talle-check" htmlFor="l">l</label>
-          <input type="checkbox" name="s"></input>
-          <label className="talle-check" htmlFor="xl">xl</label>
-        </div>
-        <div>
-        <input className="price-range" type="input" placeholder="precio minimo" name="min-price"></input>
-        <input className="price-range" type="input" placeholder="precio minimo" name="min-price"></input>
-        </div>
-      </div>
-      
-
+      <Filter setType={setType} minMaxPrice={minMaxPrice} setMinMaxPrice={setMinMaxPrice} />
+      <div className="separator-filters"><button className="more-filters-buttons"><img className="arrow-down" src={arrow}></img></button></div>
       <div className="products-list">
         {productsApi.map((product) =>
 
-          type === "all" || product.data.type === type ? <Product addToCart={setCart} product={product} ></Product> : null
+          (product.data.price >= minMaxPrice.min || minMaxPrice.min === "") && 
+          (product.data.price <= minMaxPrice.max || minMaxPrice.max === "") && 
+          (type === "all" || product.data.type === type) ? 
+          <Product addToCart={setCart} product={product} isAdmin={isAdmin}>
+          </Product> : null
         )}
         {cart && <FloatCart product={cart} />}
 
       </div>
+
 
 
     </div>

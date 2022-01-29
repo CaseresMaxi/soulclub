@@ -16,9 +16,11 @@ export const App: React.FC<any> = (): any => {
       <Switch>
         <Route path="/" component={Home} exact>
         </Route>
-        <Route path="/add" component={AddProduct}>
+        <Route exact path="/user/:pass" component={Home}>
         </Route>
-        <Route path="/add/:id" component={AddProduct}>
+        <Route path="/add" exact component={AddProduct}>
+        </Route>
+        <Route path="/add/:id"  exact component={AddProduct} >
         </Route>
       </Switch>
     </Router>
