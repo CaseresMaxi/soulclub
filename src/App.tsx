@@ -7,23 +7,14 @@ import {
 import './App.scss';
 import { AddProduct } from './pages/AddProducts/AddProducts';
 import { Home } from './pages/Home/Home';
+import Routes from './Routes';
 
 
 export const App: React.FC<any> = (): any => {
 
   return (
-    <Router >
-      <Switch>
-        <Route path="/" component={Home} exact>
-        </Route>
-        <Route exact path="/user/:pass" component={Home}>
-        </Route>
-        <Route path="/add" exact component={AddProduct}>
-        </Route>
-        <Route path="/add/:id"  exact component={AddProduct} >
-        </Route>
-      </Switch>
-    </Router>
+    <div> asdaw</div>
+ 
   )
 
 
