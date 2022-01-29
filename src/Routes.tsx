@@ -15,13 +15,13 @@ export const Routes: React.FC<any> = (): any => {
   return (
     <Router basename="/souldclub" >
       <Switch>
-        <Route path="/souldclub/" component={Home} exact>
+        <Route path="/" component={Home} exact>
         </Route>
-        <Route exact path="/souldclub/user/:pass" component={Home}>
+        <Route exact path="user/:pass" component={Home}>
         </Route>
-        <Route path="/souldclub/add" exact component={AddProduct}>
+        <Route path="/add" exact component={AddProduct}>
         </Route>
-        <Route path="/souldclub/add/:id"  exact component={AddProduct} >
+        <Route path="/add/:id"  exact component={AddProduct} >
         </Route>
       </Switch>
     </Router>
