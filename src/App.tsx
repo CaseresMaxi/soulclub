@@ -13,7 +13,7 @@ import Routes from './Routes';
 export const App: React.FC<any> = (): any => {
 
   return (
-    <div> asdaw</div>
+    <div> <Routes/></div>
  
   )
 
