@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.259111cf.css",
-    "main.js": "./static/js/main.b55745a3.js",
-    "static/js/787.000bac07.chunk.js": "./static/js/787.000bac07.chunk.js",
-    "index.html": "./index.html",
-    "main.259111cf.css.map": "./static/css/main.259111cf.css.map",
-    "main.b55745a3.js.map": "./static/js/main.b55745a3.js.map",
-    "787.000bac07.chunk.js.map": "./static/js/787.000bac07.chunk.js.map"
+    "main.css": "/sould-club/static/css/main.cc21e24a.css",
+    "main.js": "/sould-club/static/js/main.9aa5787f.js",
+    "static/js/787.000bac07.chunk.js": "/sould-club/static/js/787.000bac07.chunk.js",
+    "static/media/baner.jpg": "/sould-club/static/media/baner.88424449818cff4dca57.jpg",
+    "static/media/whatsapp-logo.png": "/sould-club/static/media/whatsapp-logo.288c668ccb8033e17ce1.png",
+    "static/media/whatsapp-logo-grey.png": "/sould-club/static/media/whatsapp-logo-grey.0a69bcdbac9e2250083c.png",
+    "static/media/Arrow-down.svg": "/sould-club/static/media/Arrow-down.6722e7abac9e30b021bb4af79228949c.svg",
+    "index.html": "/sould-club/index.html",
+    "main.cc21e24a.css.map": "/sould-club/static/css/main.cc21e24a.css.map",
+    "main.9aa5787f.js.map": "/sould-club/static/js/main.9aa5787f.js.map",
+    "787.000bac07.chunk.js.map": "/sould-club/static/js/787.000bac07.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.259111cf.css",
-    "static/js/main.b55745a3.js"
+    "static/css/main.cc21e24a.css",
+    "static/js/main.9aa5787f.js"
   ]
 }
