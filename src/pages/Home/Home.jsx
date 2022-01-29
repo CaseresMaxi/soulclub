@@ -50,7 +50,7 @@ export const Home = () => {
           (product.data.price >= minMaxPrice.min || minMaxPrice.min === "") && 
           (product.data.price <= minMaxPrice.max || minMaxPrice.max === "") && 
           (type === "all" || product.data.type === type) ? 
-          <Product addToCart={setCart} product={product} isAdmin={true}>
+          <Product addToCart={setCart} product={product} isAdmin={isAdmin}>
           </Product> : null
         )}
         {cart && <FloatCart product={cart} />}
