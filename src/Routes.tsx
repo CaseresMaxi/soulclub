@@ -17,7 +17,7 @@ export const Routes: React.FC<any> = (): any => {
       <Switch>
         <Route path="/" component={Home} exact>
         </Route>
-        <Route exact path="user/:pass" component={Home}>
+        <Route exact path="/user/:pass" component={Home}>
         </Route>
         <Route path="/add" exact component={AddProduct}>
         </Route>
