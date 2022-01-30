@@ -7,8 +7,11 @@ export const FloatCart: React.FC<any> = (props): any => {
     const [talle, setTalle] = useState("")
     const [Wmenssaje, setWmenssaje] = useState("")
     // const [totalPrice, setTotalPrice] = useState(0);
+    let sendText = []
+    const reducer = (pValue:string,cValue:string)=> pValue.concat(" ",cValue)
     const createMenssaje = (product: any) => {
-        window.open(`https://wa.me/+5491158277219?text=Articulo:%20${product.name}%0DPrecio:%20${product.price}`, '_blank');
+        sendText = product.map((p: any) => { return `Articulo:%20${p.name}%0DPrecio:%20$${p.price}` });
+        window.open(`https://wa.me/+5491158277219?text=${sendText.reduce(reducer)}`, '_blank');
         props.closeCart()
     }
     let totalPrice = 0;
@@ -28,9 +31,9 @@ export const FloatCart: React.FC<any> = (props): any => {
             })}
             <div className="separator-container-cart">
                 <div className="separator-filters-cart"></div>
-                <div className="total-container"><div className="total">{`Total: $${totalPrice}`}  </div> <button onClick={()=>createMenssaje(props.product)} className="whatsapp-button">Hace tu pedido<img className="whatsapp-logo" src={WhatsappLogo}></img></button></div>
-              
-                </div>
+                <div className="total-container"><div className="total">{`Total: $${totalPrice}`}  </div> <button onClick={() => createMenssaje(props.product)} className="whatsapp-button">Hace tu pedido<img className="whatsapp-logo" src={WhatsappLogo}></img></button></div>
+
+            </div>
 
             {/* 
             <div className="name-container">

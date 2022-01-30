@@ -44,7 +44,9 @@ export const Home = () => {
       <div ><Carouser imgs={imgs} /></div>
       {/* <div className="most-seleing">Mas vendidos</div> */}
       <Filter setType={setType} minMaxPrice={minMaxPrice} setMinMaxPrice={setMinMaxPrice} />
-      <div className="separator-filters"><button className="more-filters-buttons"><img className="arrow-down" src={arrow}></img></button></div>
+      <div className="separator-filters">
+        {/* <button className="more-filters-buttons"><img className="arrow-down" src={arrow}></img></button> */}
+        </div>
       <div className="products-list">
         {productsApi.map((product) =>
 
