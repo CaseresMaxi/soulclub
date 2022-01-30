@@ -1,35 +1,37 @@
 .floating-cart-container{
-    background-color: rgba(0, 0, 0, 0.438);
-    height: 50px;
+    background-color: rgba(0, 0, 0, 0.87);
+    height: 90%;
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
     position: fixed;
-    bottom: 10px;
+    bottom: 5%;
     border-radius: 10px;
     display: flex;
-    align-items: center;
+    align-items: left;
     color: white;
-    justify-content: center;
+    justify-content: top;
+    flex-direction: column;
+    padding-top: 10px;
+    z-index: 999;
 }
 .floating-cart-container:hover{
     background-color: rgba(0, 0, 0, 0.952)
 }
 
 .floating-cart-img{
-    width: 45px;
+    width: 80px;
     margin-left: 10px;
     border-radius: 5px;
+    margin-bottom: 30px;
+    margin-right: 10px;
 }
 
-.name-container{
-    margin-right: auto;
-    margin-left: 10%;
+.name-container-cart{
     font-weight: 400;
     line-height: 1.35;
     letter-spacing: -.01em;
     font-size: 20px;
-    padding-right: 10%;
     white-space:nowrap;
 }
 
@@ -65,6 +67,41 @@
 }
 
 .whatsapp-button{
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     border: none;
+    border-radius: 30px;
+    margin-right: 7%;
+}
+
+.row{
+    flex-direction: row;
+  }
+  .colum{
+    flex-direction: row;
+  }
+
+  .separator-filters-cart{
+    margin-left: 5%;
+    height: 2px;
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+    // border: 1px solid rgb(87, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.total{
+    margin-left: 7%;
+    margin-right: auto;
+}
+.separator-container-cart{
+    
+}
+
+.total-container{
+    display: flex;
+    flex-direction: row;
 }

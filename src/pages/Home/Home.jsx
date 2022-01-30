@@ -28,9 +28,10 @@ export const Home = () => {
     // onSnapshot(collection(db, "baners"), (snapshot) =>  setBaners(snapshot.docs.map(doc => doc.data())) );
   }, [])
   const [type, setType] = useState("all");
-  const [cart, setCart] = useState(null)
+  const [cart, setCart] = useState([])
   const {pass} = useParams()
   const [isAdmin, setIsAdmin] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
   useEffect(() => {
     
       setIsAdmin(pass==="camilasantander")
@@ -39,8 +40,8 @@ export const Home = () => {
   
   return (
     <div className='app'>
-      <Header />
-      {/* <div ><Carouser   imgs={imgs} /></div> */}
+      <Header setOpenCart={setOpenCart} cart={cart}/>
+      <div ><Carouser imgs={imgs} /></div>
       {/* <div className="most-seleing">Mas vendidos</div> */}
       <Filter setType={setType} minMaxPrice={minMaxPrice} setMinMaxPrice={setMinMaxPrice} />
       <div className="separator-filters"><button className="more-filters-buttons"><img className="arrow-down" src={arrow}></img></button></div>
@@ -50,10 +51,11 @@ export const Home = () => {
           (product.data.price >= minMaxPrice.min || minMaxPrice.min === "") && 
           (product.data.price <= minMaxPrice.max || minMaxPrice.max === "") && 
           (type === "all" || product.data.type === type) ? 
-          <Product addToCart={setCart} product={product} isAdmin={isAdmin}>
+          <Product cart={cart} addToCart={setCart} product={product} isAdmin={isAdmin}>
           </Product> : null
         )}
-        {cart && <FloatCart product={cart} />}
+        {cart.length>0 && openCart && <FloatCart closeCart={()=>{setOpenCart(false)}} product={cart} />}
+  
 
       </div>
 

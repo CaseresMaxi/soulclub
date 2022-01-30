@@ -6,22 +6,40 @@ import WhatsappLogoGrey from "../../assets/whatsapp-logo-grey.png"
 export const FloatCart: React.FC<any> = (props): any => {
     const [talle, setTalle] = useState("")
     const [Wmenssaje, setWmenssaje] = useState("")
-    const createMenssaje = (product:any,talle:any) => {
-        console.log(product, talle)
-        window.open(`https://wa.me/+5491158277219?text=Articulo:%20${product.name}%0DPrecio:%20${product.price}%0DTalle:%20${talle}`, '_blank');
+    // const [totalPrice, setTotalPrice] = useState(0);
+    const createMenssaje = (product: any) => {
+        window.open(`https://wa.me/+5491158277219?text=Articulo:%20${product.name}%0DPrecio:%20${product.price}`, '_blank');
+        props.closeCart()
     }
+    let totalPrice = 0;
     return (
         <div className="floating-cart-container">
-            <div>
-                <img className="floating-cart-img" src={props.product.src}></img>
-            </div>
+            {props.product.map((prod: any) => {
+                totalPrice = totalPrice + (parseInt(prod.price))
+                return (<div className="row">
+                    <div>
+                        <div className="name-container-cart">
+                            <img className="floating-cart-img" src={prod.src}></img>
+                            {`${prod.name} $${prod.price}`}
+
+                        </div>
+                    </div>
+                </div>)
+            })}
+            <div className="separator-container-cart">
+                <div className="separator-filters-cart"></div>
+                <div className="total-container"><div className="total">{`Total: $${totalPrice}`}  </div> <button onClick={()=>createMenssaje(props.product)} className="whatsapp-button">Hace tu pedido<img className="whatsapp-logo" src={WhatsappLogo}></img></button></div>
+              
+                </div>
+
+            {/* 
             <div className="name-container">
                 {props.product.name}
             </div>
             {props.product.talles.map((t:string)=><button onClick={()=>{setTalle(t)}} className={talle===t?"talle-btn-selected":"talle-btn"}>{t}</button>)}
             <div className="price-container">{props.product.price}</div>
-            <button className="whatsapp-button" onClick={()=>createMenssaje(props.product,talle)}><img  className="whatsapp-logo" src={talle !== ""? WhatsappLogo:WhatsappLogoGrey}></img></button>
+            <button className="whatsapp-button" onClick={()=>createMenssaje(props.product,talle)}><img  className="whatsapp-logo" src={talle !== ""? WhatsappLogo:WhatsappLogoGrey}></img></button> */}
         </div>
-        
+
     )
 }

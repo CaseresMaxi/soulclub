@@ -38,7 +38,7 @@ export const AddProduct = () => {
         <input type="file" onChange={(e) => toBase64(e.target.files)}></input>
         <img src={imgB64 ? imgB64 : initialValues.src}></img>
         <select name="select" onChange={(e) => setType(e.target.value)}>
-            <option value="">seleccionar un tipo</option>
+            <option value="">seleccionar categoria</option>
             <option value="Pantalon">Pantalon</option>
             <option value="Vestido">Vestido</option>
             <option value="Accesorio">Accesorio</option>

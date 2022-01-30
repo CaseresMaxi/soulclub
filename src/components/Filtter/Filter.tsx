@@ -8,7 +8,7 @@ export const Filter: React.FC<any> = (props): any => {
 
         <div className="selec-container">
             <select className="select-type" name="select" onChange={(e) => props.setType(e.target.value)}>
-                <option value="all">seleccionar un tipo</option>
+                <option value="all">seleccionar categoria</option>
                 <option value="Pantalon">Pantalon</option>
                 <option value="Vestido">Vestido</option>
                 <option value="Accesorio">Accesorio</option>
