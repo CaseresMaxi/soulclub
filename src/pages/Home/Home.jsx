@@ -12,10 +12,13 @@ import arrow from "../../assets/Arrow-down.svg"
 import "./Home.scss"
 import { Filter } from "../../components/Filtter/Filter";
 import { useParams } from "react-router-dom";
+import img1 from "../../assets/c1.jpg"
+import img2 from "../../assets/c2.jpg"
+import img3 from "../../assets/c3.jpg"
 
 
 export const Home = () => {
-  const imgs = ["https://www.somosmamas.com.ar/wp-content/uploads/2017/05/como-combinar-ropa-de-mujer-2.jpg", "https://www.somosmamas.com.ar/wp-content/uploads/2017/05/como-combinar-ropa-de-mujer-2.jpg", "https://www.somosmamas.com.ar/wp-content/uploads/2017/05/como-combinar-ropa-de-mujer-2.jpg"]
+  const imgs = [img1,img2,img3]
 
   const [productsApi, setProductsApi] = useState([{ id: "", data: {} }])
   const [minMaxPrice, setMinMaxPrice] = useState({ min: "", max: "" });

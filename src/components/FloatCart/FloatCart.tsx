@@ -17,6 +17,7 @@ export const FloatCart: React.FC<any> = (props): any => {
     let totalPrice = 0;
     return (
         <div className="floating-cart-container">
+            <div onClick={()=>props.closeCart()} className="close-button">X</div>
             {props.product.map((prod: any) => {
                 totalPrice = totalPrice + (parseInt(prod.price))
                 return (<div className="row">
