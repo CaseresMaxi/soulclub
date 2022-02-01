@@ -36,7 +36,7 @@ export const Home = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   useEffect(() => {
-    
+      console.log(pass,"pass")
       setIsAdmin(pass==="camilasantander")
     
   }, []);

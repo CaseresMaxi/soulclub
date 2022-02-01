@@ -1,7 +1,7 @@
 import React from 'react';
 import 'firebase/firestore';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -15,7 +15,7 @@ export const Routes: React.FC<any> = (): any => {
   return (
     <Router basename="/" >
       <Switch>
-        <Route path="/" component={Home} exact>
+        <Route path="/" component={Home}>
         </Route>
         <Route exact path="/user/:pass" component={Home}>
         </Route>
