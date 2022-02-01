@@ -3,7 +3,7 @@ import "./Product.scss"
 
 
 export const Product: React.FC<any> = (props): any => {
-
+    console.log(props.product)
     return <div className="product-card">
         {/* {props.product.data.desc && <div className="off"> {props.product.data.desc} </div>} */}
         <img alt="" className="product-img" src={props.product.data.src}></img>
@@ -15,8 +15,8 @@ export const Product: React.FC<any> = (props): any => {
         {/* <button onClick={() => { props.addToCart(props.product.data) }} className="add-to-cart">
             <img src={AddToCart} className="add-to-cart-img" ></img>
         </button> */}
-       {props.isAdmin &&  <button className="add-to-cart" onClick={()=>{window.location.href=`/souldclub/#/add/${props.product.id}`}}>editar</button>}
+       {props.isAdmin &&  <button className="add-to-cart" onClick={()=>{window.location.href=`/soul-club/#/add/${props.product.id}`}}>editar</button>}
         {/* <div className="cuotas"> {props.product.promo}</div> */}
-        <button className="add-to-cart" onClick={()=>props.addToCart(props.cart.concat(props.product.data))}> add </button>
+        <button className="add-to-cart" onClick={()=>props.addToCart(props.cart.concat(props.product.data))}> Agregar al carrito </button>
     </div>
 }

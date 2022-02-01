@@ -3,9 +3,11 @@ import { Form, Field } from 'react-final-form'
 import db from "../../firebase"
 import { useParams } from 'react-router-dom'
 import 'firebase/firestore';
+import "./AddProducts.scss"
 
 
 import { collection, doc, setDoc, Firestore, onSnapshot, snapshotEqual, deleteDoc, addDoc, getDoc } from 'firebase/firestore';
+import { Product } from "../../components/product/Product";
 export const AddProduct = () => {
     const [imgB64, setImgB64] = useState("")
     const toBase64 = (files) => {
@@ -20,13 +22,11 @@ export const AddProduct = () => {
 
     }
 
-    const {id}  = useParams()
-    console.log(id,"asd");
+    const { id } = useParams()
     const [initialValues, setInitialValues] = useState({})
     const [type, setType] = useState("");
 
     useEffect(async () => {
-        console.log("useEfect")
         if (id) {
             console.log(id);
             const docSnap = await getDoc(doc(db, "productos", id));
@@ -36,8 +36,8 @@ export const AddProduct = () => {
 
     return (<div>
         <input type="file" onChange={(e) => toBase64(e.target.files)}></input>
-        <img src={imgB64 ? imgB64 : initialValues.src}></img>
-        <select name="select" onChange={(e) => setType(e.target.value)}>
+        {/* <img src={imgB64 ? imgB64 : initialValues.src}></img> */}
+        <select value={initialValues.type} select={initialValues.type} onChange={(e) => setType(e.target.value)}>
             <option value="">seleccionar categoria</option>
             <option value="Pantalon">Pantalon</option>
             <option value="Vestido">Vestido</option>
@@ -55,7 +55,7 @@ export const AddProduct = () => {
                         {
                             ...values,
                             src: imgB64 ? imgB64 : initialValues.src,
-                            type,
+                            type: initialValues.type!=="" && type===""?initialValues.type:type,
                             talles: Array.isArray(values.talles) ? initialValues.talles : values.talles.split(",")
                         });
                     window.location.reload();
@@ -70,7 +70,7 @@ export const AddProduct = () => {
                         type="text"
                         placeholder="nombre"
                     />
-                     <Field
+                    <Field
                         name="regularPrice"
                         component="input"
                         type="text"
@@ -100,9 +100,15 @@ export const AddProduct = () => {
                         type="text"
                         placeholder="talles"
                     />
-                    <button>enviar</button>
+                    <div className="buttons-container">
+                        <button className="send-product-button">enviar</button>
+                        <button className="delete-product-button" onClick={async () => { await deleteDoc(doc(db, "productos", id)); window.location.href = "/" }}>eliminar producto</button>
+                    </div>
+                        <h1 className="vista-previa">Vista previa</h1>
+                    <div className="product-container">
+                        <Product product={{ id: "1", data: { name: values.name, price: values.price, regularPrice: values.regularPrice, talles: [""], src: imgB64 !== "" ? imgB64 : initialValues.src, stock: "1", type: type } }}></Product>
+                    </div>
                 </form>)}
         </Form>
-        <button onClick={async () => { await deleteDoc(doc(db, "productos", id)); window.location.href = "/" }}>eliminar producto</button>
     </div>)
 }

@@ -44,6 +44,7 @@ export const Home = () => {
   return (
     <div className='app'>
       <Header setOpenCart={setOpenCart} cart={cart}/>
+      <div className="carousel-container" ></div>
       <div ><Carouser imgs={imgs} /></div>
       {/* <div className="most-seleing">Mas vendidos</div> */}
       <Filter setType={setType} minMaxPrice={minMaxPrice} setMinMaxPrice={setMinMaxPrice} />
