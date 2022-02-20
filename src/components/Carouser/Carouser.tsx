@@ -5,13 +5,12 @@ import baner from "./../../assets/baner.jpg"
 
 
 export const Carouser: React.FC<any> = (props):any=> {
-  //console.log(props.imgs)
   return <div className="carousel">
     <Carousel >
       {props.imgs && props.imgs.map((src:any) => <Carousel.Item>
         {<img
           className="d-block w-100"
-          src={src}
+          src={src.src}
           alt="First slide"
         />}
          {/* <Carousel.Caption>

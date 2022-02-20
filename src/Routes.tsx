@@ -13,9 +13,9 @@ import { Home } from './pages/Home/Home';
 export const Routes: React.FC<any> = (): any => {
 
   return (
-    <Router >
+    <Router basename="/soul-club" >
       <Switch>
-        <Route path="/" exact component={Home}>
+        <Route path="/" component={Home} exact>
         </Route>
         <Route exact path="/user/:pass" component={Home}>
         </Route>

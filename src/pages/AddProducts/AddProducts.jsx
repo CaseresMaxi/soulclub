@@ -42,6 +42,7 @@ export const AddProduct = () => {
             <option value="Pantalon">Pantalon</option>
             <option value="Vestido">Vestido</option>
             <option value="Accesorio">Accesorio</option>
+            <option value="Remera">Remera</option>
         </select>
         <Form initialValues={initialValues}
             onSubmit={async (values) => {

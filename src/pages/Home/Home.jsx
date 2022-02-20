@@ -22,13 +22,13 @@ export const Home = () => {
 
   const [productsApi, setProductsApi] = useState([{ id: "", data: {} }])
   const [minMaxPrice, setMinMaxPrice] = useState({ min: "", max: "" });
-  // const [baners, setBaners] = useState({});
+  const [baners, setBaners] = useState([]);
   // const ej  = async () =>{ await addDoc(collection(db,"productos"),{})}
   // const ej  = async () =>{ await setDoc(doc(db,"productos"),{})}
   useEffect(() => {
     /* eslint-disable */
     onSnapshot(collection(db, "productos"), (snapshot) => setProductsApi(snapshot.docs.map(doc => { return { data: doc.data(), id: doc.id } })));
-    // onSnapshot(collection(db, "baners"), (snapshot) =>  setBaners(snapshot.docs.map(doc => doc.data())) );
+    onSnapshot(collection(db, "baners"), (snapshot) =>  setBaners(snapshot.docs.map(doc => doc.data())) );
   }, [])
   const [type, setType] = useState("all");
   const [cart, setCart] = useState([])
@@ -45,7 +45,7 @@ export const Home = () => {
     <div className='app'>
       <Header setOpenCart={setOpenCart} cart={cart}/>
       <div className="carousel-container" ></div>
-      <div ><Carouser imgs={imgs} /></div>
+      <div ><Carouser imgs={baners} /></div>
       {/* <div className="most-seleing">Mas vendidos</div> */}
       <Filter setType={setType} minMaxPrice={minMaxPrice} setMinMaxPrice={setMinMaxPrice} />
       <div className="separator-filters">
