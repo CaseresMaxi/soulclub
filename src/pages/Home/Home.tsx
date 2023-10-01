@@ -27,7 +27,7 @@ export const Home: React.FC<any> = (): any => {
   return (
     <div className='app'>
       <Header />
-      <div ><Carouser   imgs={imgs} /></div>
+      {/* <div ><Carouser   imgs={imgs} /></div> */}
       <div className="most-seleing">Mas vendidos</div>
       <div className="products-list">
         {productsApi.map((product) =>

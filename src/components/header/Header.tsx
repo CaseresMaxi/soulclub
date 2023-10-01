@@ -1,34 +1,46 @@
-import React, { useState } from "react";
-import './Header.scss'
-// import InstagramLogo from "../../assets/instagram-logo.png"
-import Cart from "../../assets/cart.png"
-import Filer from "../../assets/filter.png"
+import React, { useEffect, useState } from "react";
+import "./Header.scss";
+import searchLogo from "../../assets/search-logo.png";
+import cartLogo from "../../assets/cart-icon.png";
+import "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
+import db from "../../firebase";
 
 export const Header: React.FC<any> = (): any => {
-    const [fitlersOpen, setFitlersOpen] = useState(false)
-    return <div>
-        <div className="header-container">
-            <div className="logo">SOULD CLUB
-                {/* <a href="https://www.instagram.com/soul.club_/"><img className="inst-logo" src={InstagramLogo}></img></a> */}
-            </div>
-            <img alt="" onClick={() => { setFitlersOpen(!fitlersOpen) }} className="filter-logo" src={Filer}></img>
-            <img alt="" className="cart-logo" src={Cart}></img>
-        </div>
-        {fitlersOpen &&
-            <div className="filters">
-               FILTERS WORKING PROGRES
-                {/* <div className="dropdown">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </button>
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <li><button className="dropdown-item" type="button">Productos</button></li>
-                        <li><button className="dropdown-item" type="button">Conjuntos</button></li>
-                        <li><button className="dropdown-item" type="button">Vestidos</button></li>
-                    </ul>
-                </div> */}
-            </div>
-        }
-    </div>
+  const [icon, setIcon] = useState("");
+  const [contactInfo, setContactInfo] = useState({ phone: "", igUrl: "" });
 
-}
+  useEffect(() => {
+    /* eslint-disable */
+    onSnapshot(collection(db, "icons"), (snapshot) =>
+      setIcon(snapshot.docs[0].data().src)
+    );
+    onSnapshot(collection(db, "contact-info"), (snapshot) =>
+      setContactInfo({
+        phone: snapshot.docs[0].data().phone,
+        igUrl: snapshot.docs[0].data().igUrl,
+      })
+    );
+  }, []);
+  return (
+    <div className="header-wrapper">
+      <div className="supra-header">
+        <p className="contact-us">Contactanos: {contactInfo.phone}</p>
+      </div>
+      <div className="header-container">
+        <div className="herder-logo-container">
+          <img src={icon} className="logo" alt=""></img>
+        </div>
+        <div className="search-container">
+          <input type="text"></input>
+          <button>
+            <img alt="" src={searchLogo}></img>
+          </button>
+        </div>
+        <div className="cart-container">
+          <img className="card-logo" alt="" src={cartLogo}></img>
+        </div>
+      </div>
+    </div>
+  );
+};
