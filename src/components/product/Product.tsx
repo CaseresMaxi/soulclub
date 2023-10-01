@@ -1,5 +1,6 @@
 import React from "react";
 import "./Product.scss"
+// import AddToCart from "../../assets/addToCart.png"
 
 
 export const Product: React.FC<any> = (props): any => {
@@ -12,7 +13,7 @@ export const Product: React.FC<any> = (props): any => {
         {/* <button onClick={() => { props.addToCart(props.product.data) }} className="add-to-cart">
             <img src={AddToCart} className="add-to-cart-img" ></img>
         </button> */}
-        {/* <button onClick={()=>{window.location.href=`/add/${props.product.id}`}}>editar</button> */}
-        {/* <div className="cuotas"> {props.product.promo}</div> */}
+        <button onClick={()=>{window.location.href=`/add/${props.product.id}`}}>editar</button>
+        <div className="cuotas"> {props.product.promo}</div>
     </div>
 }
